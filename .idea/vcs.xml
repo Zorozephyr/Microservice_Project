@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/accounts" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/cards" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/configserver" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/docker-compose" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/loans" vcs="Git" />
+  </component>
+</project>
