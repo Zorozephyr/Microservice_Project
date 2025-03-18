@@ -19,15 +19,17 @@ public class GatewayserverApplication {
 	public RouteLocator eazyBankRouteConfig(RouteLocatorBuilder routeLocatorBuilder){
 		return routeLocatorBuilder.routes()
 				.route(p -> p.path("/eazybank/accounts/**")
-						.filters(f -> f.rewritePath("/eazybank/accounts/(?<segment>.*","/${segment}")
+						.filters(f -> f.rewritePath("/eazybank/accounts/(?<segment>.*)", "/${segment}")
 								.addResponseHeader("X-Response-Time", LocalDateTime.now().toString()))
 						.uri("lb://ACCOUNTS"))
-				.route(p -> p.path("/eazybank/accounts/**")
-						.filters(f -> f.rewritePath("/eazybank/loans/(?<segment>.*","/${segment}")
+
+				.route(p -> p.path("/eazybank/loans/**")  // Fix incorrect duplicate path
+						.filters(f -> f.rewritePath("/eazybank/loans/(?<segment>.*)", "/${segment}")
 								.addResponseHeader("X-Response-Time", LocalDateTime.now().toString()))
 						.uri("lb://LOANS"))
-				.route(p -> p.path("/eazybank/accounts/**")
-						.filters(f -> f.rewritePath("/eazybank/cards/(?<segment>.*","/${segment}")
+
+				.route(p -> p.path("/eazybank/cards/**")  // Fix incorrect duplicate path
+						.filters(f -> f.rewritePath("/eazybank/cards/(?<segment>.*)", "/${segment}")
 								.addResponseHeader("X-Response-Time", LocalDateTime.now().toString()))
 						.uri("lb://CARDS"))
 				.build();
