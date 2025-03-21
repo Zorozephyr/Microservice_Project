@@ -14,11 +14,7 @@ spring:
   httpClient:
     connect-timeout: 10s
     response-timeout: 10s
-  data:
-    redis:
-      connect-timeout: 2s
-      host: ${SPRING_DATA_REDIS_HOST:localhost}
-      port: ${SPRING_DATA_REDIS_PORT:6379}
+
 
 management:
   endpoints:
@@ -31,6 +27,9 @@ management:
   info:
     env:
       enabled: true
+  metrics:
+    tags:
+      application: ${spring.application.name}
 
 
 eureka:
