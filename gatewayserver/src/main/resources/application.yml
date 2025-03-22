@@ -12,8 +12,14 @@ spring:
           enabled: false
           lowerCaseServiceId: true
   httpClient:
-    connect-timeout: 10s
-    response-timeout: 10s
+    connect-timeout: 60s
+    response-timeout: 60s
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: "${KEYCLOAK_URL:http://localhost:7080}/realms/master/protocol/openid-connect/certs"
+
 
 
 management:
