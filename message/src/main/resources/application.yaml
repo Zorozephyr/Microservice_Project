@@ -8,3 +8,17 @@ spring:
   cloud:
     function:
       definition: email|sms
+    stream:
+      bindings:
+        emailsms-in-0: #emailsms input starting index
+          destination: send-communication #function is binded to this queue
+          group: ${spring.application.name}
+        emailsms-out-0: #emailsms input starting index
+          destination: communication-sent #No need of service changes
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    connection-timeout: 10s
