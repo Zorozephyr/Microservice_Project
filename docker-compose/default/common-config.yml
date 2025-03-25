@@ -1,0 +1,38 @@
+services:
+  network-deploy-service:
+    networks:
+      - eazybank
+
+
+  microservice-base-config:
+    extends:
+      service: network-deploy-service
+    environment:
+      SPRING_PROFILE_ACTIVE: default
+      JAVA_TOOLS_OPTIONS: "-javaagent:/app/libs/opentelemetry-javaagent-1.27.0.jar"
+      OTEL_EXPLORER_OTLP_ENDPOINT: http://tempo:4317
+      OTEL_METRICS_EXPORTER: none #uses prometheus for exporting metrics data
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+
+
+
+  microservice-configserver-config:
+    extends:
+      service: microservice-base-config
+    depends_on:
+      configserver:
+        condition: service_healthy
+    environment:
+      SPRING_CONFIG_IMPORT: "configserver:http://configserver:8071/"
+
+  microservice-eureka-config:
+    extends:
+      service: microservice-configserver-config
+    depends_on:
+      eurekaserver:
+        condition: service_healthy
+    environment:
+      EUREKA_SERVER_URL: "http://eurekaserver:8070/eureka"
