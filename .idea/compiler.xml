@@ -32,9 +32,6 @@
         <module name="cards" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="accounts" target="19" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
