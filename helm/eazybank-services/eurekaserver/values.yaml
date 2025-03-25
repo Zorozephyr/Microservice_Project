@@ -1,0 +1,24 @@
+deploymentName: eurekaserver-deployment
+serviceName: eurekaserver
+appLabel: eurekaserver
+appName: eurekaserver
+
+replicaCount: 1
+
+image:
+  repository: eazybytes/eurekaserver
+  tag: "1.0"
+
+containerPort: 8070
+
+service:
+  type: LoadBalancer
+  port: 8070
+  targetPort: 8070
+
+appname_enabled: true
+profile_enabled: false
+config_enabled: true
+eureka_enabled: false
+resouceserver_enabled: false
+rabbitmq_enabled: false
