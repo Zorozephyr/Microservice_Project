@@ -7,18 +7,28 @@ spring:
     import:  "${SPRING_CONFIG_IMPORT:optional:configserver:http://localhost:8071}"
   cloud:
     gateway:
+      httpclient:
+        connect-timeout: 60s
+        response-timeout: 60s
+#      discovery:
+#        locator:
+#          enabled: false
+#          lowerCaseServiceId: true
+    kubernetes:
       discovery:
-        locator:
+        enabled: true
+        all-namespaces: true
+    discovery:
+      client:
+        health-indicator:
           enabled: false
-          lowerCaseServiceId: true
-  httpClient:
-    connect-timeout: 60s
-    response-timeout: 60s
+
   security:
     oauth2:
       resourceserver:
         jwt:
           jwk-set-uri: "${KEYCLOAK_URL:http://localhost:7080}/realms/master/protocol/openid-connect/certs"
+
 
 
 
@@ -38,14 +48,14 @@ management:
       application: ${spring.application.name}
 
 
-eureka:
-  instance:
-    preferIpAddress: true
-  client:
-    fetchRegistry: true
-    registerWithEureka: true
-    serviceUrl:
-      defaultZone: "${EUREKA_SERVER_URL:http://localhost:8070/eureka}"
+#eureka:
+#  instance:
+#    preferIpAddress: true
+#  client:
+#    fetchRegistry: true
+#    registerWithEureka: true
+#    serviceUrl:
+#      defaultZone: "${EUREKA_SERVER_URL:http://localhost:8070/eureka}"
 
 endpoint:
   shutdown:

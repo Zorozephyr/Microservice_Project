@@ -19,6 +19,7 @@ service:
 appname_enabled: true
 profile_enabled: false
 config_enabled: false
+disovery_enabled: false
 eureka_enabled: false
 resouceserver_enabled: false
 rabbitmq_enabled: false

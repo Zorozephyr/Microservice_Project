@@ -20,6 +20,10 @@ spring:
     show-sql: true
   config:
     import: "${SPRING_CONFIG_IMPORT:optional:configserver:http://localhost:8071}"
+  cloud:
+    kubernetes:
+      discovery:
+        all-namespaces: true
 
 management:
   endpoints:
@@ -48,14 +52,14 @@ endpoint:
   shutdown:
     enabled: true
 
-eureka:
-  instance:
-    preferIpAddress: true
-  client:
-    fetchRegistry: true
-    registerWithEureka: true
-    serviceUrl:
-      defaultZone: "${EUREKA_SERVER_URL:http://localhost:8070/eureka/}"
+#eureka:
+#  instance:
+#    preferIpAddress: true
+#  client:
+#    fetchRegistry: true
+#    registerWithEureka: true
+#    serviceUrl:
+#      defaultZone: "${EUREKA_SERVER_URL:http://localhost:8070/eureka/}"
 
 
 

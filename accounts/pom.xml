@@ -62,10 +62,17 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
-		<dependency>
+		<!--<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>-->
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-kubernetes-discoveryclient</artifactId>
 		</dependency>
+
+
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-circuitbreaker-resilience4j</artifactId>
@@ -164,7 +171,7 @@
 						<image>eclipse-temurin:21-jre</image>
 					</from>
 					<to>
-						<image>zorozephyr/${project.artifactId}:1.0</image>
+						<image>zorozephyr/${project.artifactId}:2.0</image>
 					</to>
 				</configuration>
 			</plugin>
