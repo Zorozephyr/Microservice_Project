@@ -22,6 +22,7 @@ spring:
     kubernetes:
       discovery:
         all-namespaces: true
+        discovery-server-url: ${SPRING.CLOUD.KUBERNETES.DISCOVERY.DISCOVERY-SERVER-URL}
 
 
 management:

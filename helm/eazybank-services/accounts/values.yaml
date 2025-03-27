@@ -6,7 +6,7 @@ appName: accounts
 replicaCount: 1
 
 image:
-  repository: eazybytes/accounts
+  repository: zorozephyr/accounts
   tag: "2.0"
 
 containerPort: 8080

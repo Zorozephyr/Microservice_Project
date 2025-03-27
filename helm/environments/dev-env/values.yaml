@@ -4,5 +4,5 @@ global:
   configServerURL: configserver:http://configserver:8071/
   eurekaServerURL: http://eurekaserver:8070/eureka/
   keyCloakURL: http://keycloak.default.svc.cluster.local:80/realms/master/protocol/openid-connect/certs
-  rabbitmqHost: my-rabbitmq.rabbitmq.svc.cluster.local:5672
+  rabbitmqHost: rabbitmq.rabbitmq.svc.cluster.local
   discoveryServerUrl: "http://spring-cloud-kubernetes-discoveryserver:80/"

@@ -6,7 +6,7 @@ appName: loans
 replicaCount: 1
 
 image:
-  repository: eazybytes/loans
+  repository: zorozephyr/loans
   tag: "2.0"
 
 containerPort: 8090

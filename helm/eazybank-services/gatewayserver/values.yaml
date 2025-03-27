@@ -6,7 +6,7 @@ appName: gatewayserver
 replicaCount: 1
 
 image:
-  repository: eazybytes/gatewayserver
+  repository: zorozephyr/gatewayserver
   tag: "2.0"
 
 containerPort: 8072

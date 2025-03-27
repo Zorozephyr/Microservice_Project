@@ -6,7 +6,7 @@ appName: cards
 replicaCount: 1
 
 image:
-  repository: eazybytes/cards
+  repository: zorozephyr/cards
   tag: "2.0"
 
 containerPort: 8080

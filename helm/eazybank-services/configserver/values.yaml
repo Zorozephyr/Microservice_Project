@@ -6,7 +6,7 @@ appName: configserver
 replicaCount: 1
 
 image:
-  repository: eazybytes/configserver
+  repository: zorozephyr/configserver
   tag: "1.0"
 
 containerPort: 8071
