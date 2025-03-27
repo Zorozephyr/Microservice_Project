@@ -17,8 +17,8 @@ spring:
           destination: communication-sent #No need of service changes
 
   rabbitmq:
-    host: localhost
+    host: "${RABBITMQ_HOST:localhost}"
     port: 5672
     username: guest
     password: guest
-    connection-timeout: 10s
+    connection-timeout: 30s
